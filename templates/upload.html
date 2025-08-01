@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload</title>
+    <style>
+        #wait {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        function checkFileSize(event) {
+            const fileInput = document.querySelector('input[type="file"]');
+            const maxSize = 7 * 1024 * 1024; // 7MB
+
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                if (file.size > maxSize) {
+                    alert('File is too large. Maximum file size is 7MB.');
+                    event.preventDefault(); // Prevent the form from being submitted
+                    return;
+                }
+            }
+	    updateServerLoad();
+            showLoading();
+        }
+
+        function showLoading() {
+            const uploadButton = document.querySelector('input[type="submit"]');
+            const waitGif = document.getElementById('wait');
+
+            uploadButton.style.display = 'none';
+            waitGif.style.display = 'block';
+        }
+        function updateServerLoad() {
+		const serverLoad = document.getElementById('server-load');
+		serverLoad.innerHTML = '100 %';
+    	}
+    </script>
+</head>
+<body bgcolor="SeaGreen" text="Beige">
+<h1> Swift Printer Beta v0.6 data generator (UPDATE!!!)</h1>
+    <h2>Upload an Image (only PNG, max 7MB)</h2>
+    <form method="POST" action="/upload" enctype="multipart/form-data" onsubmit="checkFileSize(event)">
+        <input type="file" name="file" accept=".png">
+        <input type="submit" value="Upload">
+        <img id="wait" src="{{ url_for('static', filename='images/wait.gif') }}" alt="Please wait...">
+    </form>
+    Already generated: {{ runs }} <br>
+    Current server load : <span id="server-load"> {{ cpu }} %</span> <br>
+    <br>
+    Processing takes 10-20 seconds. Please be patient.
+		
+</body>
+</html>
+

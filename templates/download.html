@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Download</title>
+    <script>
+        window.onload = function() {
+            var zipFileName = "/downloads/{{ data_file }}";
+
+            var downloadLink = document.createElement('a');
+            downloadLink.href = zipFileName;
+            downloadLink.download = "{{ data_file }}";
+
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        };
+    </script>
+</head>
+<body bgcolor="SeaGreen" text="Beige">
+    <h2>Downloading...</h2>
+    <p>Your download should start automatically.</p>
+    <p>If not <a href="/downloads/{{ data_file }}">click here</a></p>
+    <p>Estimated print time: {{ ETA }}</p>
+    <p><a href="/">Back</a></p>
+    <p></p>
+    <p>Uploaded images are deleted immediately after processing, generated data 10 minutes after</p>
+</body>
+</html>

@@ -38,3 +38,5 @@ everytime you need to use the local page, you need to run archlinux,and cd back 
 
 # if you encounter any errors during this it may just be my horrible teaching. my discord is @cayrr.s if you have issues that u cant just chatgpt through.
 
+
+this tut sucks lmao but wtv

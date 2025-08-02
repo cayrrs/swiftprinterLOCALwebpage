@@ -61,7 +61,7 @@ after that, download the files in this github repo by pressing Code then downloa
 unzip the files in the Documents directory (NOT in Onedrive.)
 
 
-in WSL run cd /mnt/c/Users/YOURWINDOWSUSRNAME/Documents    *replace YOURWINDOWSUSRNAME with the name of the folder that is not Default or Public in Users. you can find Users by going into your c drive then going to Users.
+in WSL run cd /mnt/c/Users/YOURWINDOWSUSRNAME/Documents    *replace YOURWINDOWSUSRNAME with your windows user name (if ya dont know it google how to find it)
 
 
 you should be in the Documents dir now. execute ls to see all files.
@@ -70,7 +70,7 @@ you should be in the Documents dir now. execute ls to see all files.
 if you extracted the zip properly, there should be a folder called SwiftPrinterLOCAL.
 
 
-type cd SwiftPrinterLOCAL (or whatever the folder's name is)
+type cd swiftprinterLOCALwebpage-main (or whatever the folder's name is)
 
 
 you are now in the main dir of the website.
@@ -88,10 +88,10 @@ now, you should be ready to run app.py.
 execute python3 app.py
 
 
-you should now see stuff like Running on ###  the one right before Press Ctrl+C to quit is the one you should use.
+you should now see stuff like Running on ###, copy paste one of em or ctrl+click
 
 
-ctrl click the link.
+
 
 
 now it should work!!!!!
